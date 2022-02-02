@@ -48,5 +48,5 @@ function fibonacci(numb) {
         return fibo;
     }
 }
-const myFibo = fibonacci(8);
+const myFibo = fibonacci(12);
 console.log(myFibo);
