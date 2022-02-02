@@ -54,7 +54,8 @@ console.log(areas);
 function secondMax(num) {
     let max = Math.max.apply(null, num); // get the max of the array
     num.splice(num.indexOf(max), 1); // remove max from the array
-    return Math.max.apply(null, num); // get the 2nd max
+    let get2ndMax = Math.max.apply(null, num); // get the 2nd max
+    return get2ndMax;
 };
 const large2nd = secondMax([20, 120, 111, 215, 54, 78]);
 console.log(large2nd);
