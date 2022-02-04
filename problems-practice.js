@@ -38,7 +38,7 @@ function averageNUm(numbs) {
     return sum / numbs.length;
 };
 const averageResult = averageNUm([2, 3, 5, 8, 10]);
-console.log("Average is", averageResult);
+// console.log("Average is", averageResult);
 
 // problem 4 ; input Rectangle height and width and get area(আয়তন)\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 function rectangleArea(height, width) {
@@ -48,14 +48,23 @@ function rectangleArea(height, width) {
 const height = 30;
 const width = 50;
 const areas = rectangleArea(height, width);
-console.log(areas);
+// console.log(areas);
 
 // problem 5 ; find 2nd largest Number in an Array
-function secondMax(num) {
-    let max = Math.max.apply(null, num); // get the max of the array
-    num.splice(num.indexOf(max), 1); // remove max from the array
-    let get2ndMax = Math.max.apply(null, num); // get the 2nd max
-    return get2ndMax;
-};
-const large2nd = secondMax([20, 120, 111, 215, 54, 78]);
-console.log(large2nd);
+function secondLargest(numbers) {
+    let largestNum = numbers[0];
+    let secondLargestNum = numbers[0];
+    for (let i = 0; i < numbers.length; i++) {
+        let element = numbers[i]
+        if (element > largestNum) {
+            secondLargestNum = largestNum;
+            largestNum = element;
+        }
+        else if (element > secondLargestNum) {
+            secondLargestNum = element;
+        }
+    }
+    return secondLargestNum;
+}
+const myNums = secondLargest([12, 45, 20, 87, 123, 167, 244, 12, 20]);
+console.log(myNums);
